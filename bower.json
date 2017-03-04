@@ -1,0 +1,25 @@
+{
+  "name": "Lista Telefonica",
+  "authors": [
+    "douglas <douglas.rfranco@gmail.com>"
+  ],
+  "description": "Lista telefonica com Angularjs",
+  "main": "index.html",
+  "keywords": [
+    "Lista",
+    "Telefonica"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.6.2",
+    "bootstrap": "^3.3.7"
+  }
+}
