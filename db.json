@@ -1,0 +1,85 @@
+{
+  "contatos": [
+    {
+      "id": 0,
+      "nome": "Pedro Silva",
+      "telefone": "9999-1123",
+      "data": "2015-04-12T12:53:46.204z",
+      "operadora": {
+        "nome": "Oi",
+        "codigo": 14,
+        "categoria": "Celular"
+      }
+    },
+    {
+      "id": 1,
+      "nome": "Ana Mello",
+      "telefone": "9699-1123",
+      "data": "2015-04-12T12:53:46.204z",
+      "operadora": {
+        "nome": "Oi",
+        "codigo": 14,
+        "categoria": "Celular"
+      }
+    },
+    {
+      "id": 2,
+      "nome": "Jose Maria",
+      "telefone": "9999-3123",
+      "data": "2015-04-12T12:53:46.204z",
+      "operadora": {
+        "nome": "Oi",
+        "codigo": 14,
+        "categoria": "Celular"
+      }
+    },
+    {
+      "id": 3,
+      "nome": "Pedro Antonio",
+      "telefone": "9959-1123",
+      "data": "2015-04-12T12:53:46.204z",
+      "operadora": {
+        "nome": "Oi",
+        "codigo": 14,
+        "categoria": "Celular"
+      }
+    },
+    {
+      "nome": "Douglas Franco",
+      "operadora": {
+        "nome": "Tim",
+        "codigo": 41,
+        "categoria": "Celular"
+      },
+      "telefone": "9999-4455",
+      "id": 4
+    }
+  ],
+  "operadoras": [
+    {
+      "nome": "Oi",
+      "codigo": 14,
+      "categoria": "Celular"
+    },
+    {
+      "nome": "Vivo",
+      "codigo": 15,
+      "categoria": "Celular"
+    },
+    {
+      "nome": "Tim",
+      "codigo": 41,
+      "categoria": "Celular"
+    },
+    {
+      "nome": "GVT",
+      "codigo": 25,
+      "categoria": "Fixo"
+    },
+    {
+      "nome": "NET",
+      "codigo": 21,
+      "categoria": "Fixo"
+    }
+  ]
+}
