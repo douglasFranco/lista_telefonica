@@ -7,99 +7,10 @@
 	<link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.css">
 	<script src="bower_components/angular/angular.min.js"></script>
 	<script src="bower_components/angular-messages/angular-messages.min.js"></script>
-	<style>
-		.jumbotron {
-			width: 400px;
-			margin-top: 20px;
-			text-align: center;
-			margin-left: auto;
-			margin-right: auto;
-			padding: 40px 20px;
-		}
-
-		.table {
-			margin-top: 20px;
-		}
-
-		.form-control {
-			margin-bottom: 5px;
-		}
-
-		.selecionado {
-			background-color: yellow;
-		}
-
-		.negrito {
-			font-weight: bold;
-		}
-	</style>
-	<script>
-		var app = angular.module("listaTelefonica", ["ngMessages"]);
-		app.controller("listaTelefonicaCtrl", function ($scope, $http) {
-
-			$scope.app = "Lista Telefonica";
-			$scope.contatos = [];
-
-			$scope.adicionarContato = function (contato) {
-				$http({
-					method: 'POST',
-					url: 'http://localhost:3000/contatos',
-					data: contato
-				}).then(function (success) {
-					delete $scope.contato;
-					$scope.contatoForm.$setPristine();
-					carregarContatos();
-				}, function (error) {
-					console.log(error);
-				});
-			};
-
-			var carregarContatos = function () {
-				$http({
-					method: 'GET',
-					url: 'http://localhost:3000/contatos'
-				}).then(function (success) {
-					$scope.contatos = success.data;
-				}, function (error) {
-					console.log(error);
-				});
-			}
-
-			var carregarOperadoras = function () {
-				$http({
-					method: 'GET',
-					url: 'http://localhost:3000/operadoras'
-				}).then(function (success) {
-					$scope.operadoras = success.data;
-				}, function (error) {
-					console.log(error);
-				});
-			}
-
-			$scope.apagarContatos = function (contatos) {
-				$scope.contatos = contatos.filter(function (contato) {
-					if (!contato.selecionado) {
-						return contato;
-					}
-				})
-			};
-
-			$scope.isContatoSelecionado = function (contatos) {
-				return contatos.some(function (contato) {
-					return contato.selecionado;
-				});
-			};
-
-			$scope.ordenarPor = function (campo) {
-				$scope.criterioDeOrdenacao = campo;
-				$scope.direcaoDaOrdenacao = !$scope.direcaoDaOrdenacao;
-			};
-
-			carregarContatos();
-			carregarOperadoras();
-
-		});
-	</script>
+	<link rel="stylesheet" type="text/css" href="css/app.css"></link>	
+	<script src="js/app.js"></script>
+	<script src="js/controllers/listaTelefonicaCtrl.js"></script>
+	
 </head>
 
 <body ng-controller="listaTelefonicaCtrl">
