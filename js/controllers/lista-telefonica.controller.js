@@ -1,24 +1,19 @@
 (function() {
     'use strict';
-
+    
     angular
         .module('listaTelefonica')
         .controller('listaTelefonicaCtrl', listaTelefonicaCtrl);
 
-    listaTelefonicaCtrl.$inject = ['$http', '$scope'];
-    function listaTelefonicaCtrl($http, $scope) {
-        var vm = this;
+    listaTelefonicaCtrl.$inject = ['$scope', 'contatosApi', 'operadorasApi'];
+    function listaTelefonicaCtrl($scope, contatosApi, operadorasApi) {
 
         $scope.app = "Lista Telefonica";        
         $scope.contatos = [];
         $scope.operadoras = [];
 
         $scope.adicionarContato = function (contato) {
-            $http({
-                method: 'POST',
-                url: 'http://localhost:3000/contatos',
-                data: contato
-            }).then(function (success) {
+            contatosApi.setContato(contato).then(function (success) {
                 delete $scope.contato;
                 $scope.contatoForm.$setPristine();
                 carregarContatos();
@@ -28,22 +23,16 @@
         };
 
         var carregarContatos = function () {
-            $http({
-                method: 'GET',
-                url: 'http://localhost:3000/contatos'
-            }).then(function (success) {
+            contatosApi.getContatos().then(function (success) {
                 $scope.contatos = success.data;
                 console.log($scope.contatos);
             }, function (error) {
-                console.log(error);
+                $scope.error = 'Não foi possível carregar os dados.';
             });
         }
 
         var carregarOperadoras = function () {
-            $http({
-                method: 'GET',
-                url: 'http://localhost:3000/operadoras'
-            }).then(function (success) {
+            operadorasApi.getOperadoras().then(function (success) {
                 $scope.operadoras = success.data;
                 console.log($scope.operadoras);
             }, function (error) {

@@ -53,6 +53,19 @@
       },
       "telefone": "9999-4455",
       "id": 4
+    },
+    {
+      "id": 5
+    },
+    {
+      "nome": "Amaral Torres",
+      "telefone": "3333-4444",
+      "operadora": {
+        "nome": "GVT",
+        "codigo": 25,
+        "categoria": "Fixo"
+      },
+      "id": 6
     }
   ],
   "operadoras": [
